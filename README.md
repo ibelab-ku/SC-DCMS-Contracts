@@ -25,4 +25,6 @@ Cakeshop contract management dashboard can be used to for testing deployed smart
 Merlec, M.M.; Lee, Y.K.; Hong, S.-P.; In, H.P. [A Smart Contract-Based Dynamic Consent Management System for Personal Data Usage under GDPR.](https://doi.org/10.3390/s21237994) Sensors 2021, 21, 7994. https://doi.org/10.3390/s21237994
 
 ### iBELab - Intelligent Blockchain Engineering Lab.    
-https://ibel.korea.ac.kr/ - Korea University
+https://ibel.korea.ac.kr/ - Korea University  
+
+
