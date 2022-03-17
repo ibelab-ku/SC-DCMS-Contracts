@@ -1,0 +1,450 @@
+{
+	"compiler": {
+		"version": "0.6.6+commit.6c089d02"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_dataSetID",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_accessedBy",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_from",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_atTimestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "dataSetAccessed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_dataSetID",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_dataProvider",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_deletedBy",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_erasureTimestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "dataSetDeleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_dataSetID",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_processedBy",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_from",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_atTimestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "dataSetProcessed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_dataSetID",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_dataProvider",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_version",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_lastUpdate",
+						"type": "uint256"
+					}
+				],
+				"name": "dataSetUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_dataSetID",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_dataSetName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_category",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_dataProvider",
+						"type": "address"
+					}
+				],
+				"name": "newDataSetAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "DataSetList",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_dataSetID",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_dataSetName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_category",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_dataProvider",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_dataHashValue",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_accessLink",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_version",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isPersonal",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isSensitive",
+						"type": "bool"
+					}
+				],
+				"name": "addNewDataSet",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "countDataSets",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_dataSetID",
+						"type": "string"
+					}
+				],
+				"name": "getDataSetInfo",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_dataSetID",
+						"type": "string"
+					}
+				],
+				"name": "isPersonal",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_dataSetID",
+						"type": "string"
+					}
+				],
+				"name": "isSensitive",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_dataSetID",
+						"type": "string"
+					}
+				],
+				"name": "isdataProvider",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_dataSetID",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_dataSetName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_category",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_dataProvider",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_dataHashValue",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_accessLink",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_version",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isPersonal",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isSensitive",
+						"type": "bool"
+					}
+				],
+				"name": "updateDataSet",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"browser/SC-CDMS/PersonalDataMgr.sol": "PersonalDataMgr"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"browser/SC-CDMS/PersonalDataMgr.sol": {
+			"keccak256": "0xf09b92615487cad6e6417bcd0cd2d2c5b3c052145417207df662a59ac3866674",
+			"urls": [
+				"bzz-raw://ec7ce8add0c621a9db2f705f9aa32b9867defc7a98212166ede7fca2413d180a",
+				"dweb:/ipfs/QmfXpJUf7MZgWNambA6HcF13kobuLdzrgBkdaKsjABnxnt"
+			]
+		}
+	},
+	"version": 1
+}

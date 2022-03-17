@@ -1,0 +1,681 @@
+{
+	"compiler": {
+		"version": "0.6.6+commit.6c089d02"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_uProfileID",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isDataSubject",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isDataController",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isRegulator",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isDataProcessor",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isApproved",
+						"type": "bool"
+					}
+				],
+				"name": "newUserProfileCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_roleRequestNum",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_roleRequesterID",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isRequested",
+						"type": "bool"
+					}
+				],
+				"name": "roleApprovalRequested",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_roleRequestNum",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_roleRequesterID",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_roleApproverID",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isRoleApproved",
+						"type": "bool"
+					}
+				],
+				"name": "roleApproved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_uProfileID",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_revokerID",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isRevoked",
+						"type": "bool"
+					}
+				],
+				"name": "userProfileRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_uProfileID",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isDataSubject",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isDataController",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isRegulator",
+						"type": "bool"
+					}
+				],
+				"name": "userProfileUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "RoleApprovalRequestList",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "UserProfiles",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_roleRequestNum",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_roleRequesterID",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_roleApproverID",
+						"type": "address"
+					}
+				],
+				"name": "approveRole",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "isProcessed",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "countUserProfiles",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_uProfileID",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_idCardNumber",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_fullName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_subscriptionNum",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_birthDay",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isDataSubject",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isDataController",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isDataProcessor",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isRegulator",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isDelagated",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isRevoked",
+						"type": "bool"
+					}
+				],
+				"name": "createUserProfile",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_roleRequestNum",
+						"type": "string"
+					}
+				],
+				"name": "getApproveRoleInfo",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "_roleRequesterID",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_roleApproverID",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRoleApproved",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isProcessed",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_roleRequestNum",
+						"type": "string"
+					}
+				],
+				"name": "getRequestRoleApprovalInfo",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "roleRequesterID",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "requestDetails",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRequested",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isProcessed",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_uProfileID",
+						"type": "address"
+					}
+				],
+				"name": "getUserProfile",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "fullName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "subscriptionNum",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "birthDay",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isDataSubject",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isDataController",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isRegulator",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isRevoked",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getUserProfiles",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_uProfileID",
+						"type": "address"
+					}
+				],
+				"name": "isDataController",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_uProfileID",
+						"type": "address"
+					}
+				],
+				"name": "isDataSubject",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_uProfileID",
+						"type": "address"
+					}
+				],
+				"name": "isDelagated",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_uProfileID",
+						"type": "address"
+					}
+				],
+				"name": "isRegulator",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_uProfileID",
+						"type": "address"
+					}
+				],
+				"name": "isRevoked",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_roleRequestNum",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_roleRequesterID",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_requestDetails",
+						"type": "string"
+					}
+				],
+				"name": "requestRoleApproval",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "_isRequested",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userProfileID",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_revokerID",
+						"type": "address"
+					}
+				],
+				"name": "revokeUserProfile",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_uProfileID",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_idCardNumber",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_fullName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_subscriptionNum",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_bithDay",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isDataSubject",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isDataController",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isRegulator",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isDelagated",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isRevoked",
+						"type": "bool"
+					}
+				],
+				"name": "updateUserProfile",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"browser/SC-CDMS/UserProfileMgr.sol": "UserProfileMgr"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"browser/SC-CDMS/UserProfileMgr.sol": {
+			"keccak256": "0x9caef69c858b67b758f71d0a45a9aa690b24a1f02227f468cb2d45269ad3b35d",
+			"urls": [
+				"bzz-raw://3ae63e8cd4164f48c0c0fcef4b20f947a17949e53af12933ac6e45b1728ea76d",
+				"dweb:/ipfs/QmSqk8U2fPqc6AJViYoqcjjHyas12fkGRijAb3Sw7CP2wG"
+			]
+		}
+	},
+	"version": 1
+}

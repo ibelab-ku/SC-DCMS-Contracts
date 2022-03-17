@@ -1,0 +1,600 @@
+{
+	"compiler": {
+		"version": "0.6.6+commit.6c089d02"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_agrNum",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isValid",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isExpired",
+						"type": "bool"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "approvedBy",
+						"type": "address"
+					}
+				],
+				"name": "consentAgreementExpired",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_agrNum",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_consentReqID",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "_isValid",
+						"type": "bool"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "agreedBy",
+						"type": "address"
+					}
+				],
+				"name": "consentAgreementMade",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_agrNum",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_lastUpdate",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "updatedBy",
+						"type": "address"
+					}
+				],
+				"name": "consentAgreementUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_consentReqID",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_requestedBy",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_dataSubjectID",
+						"type": "address"
+					}
+				],
+				"name": "consentRequestCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_uOpCode",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_uOpDescription",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_setBy",
+						"type": "address"
+					}
+				],
+				"name": "usageOperationSet",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "ConsentAgreementList",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "ConsentRequestList",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "UsageOperationList",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "countConsentAgreement",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "countConsentRequest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_agrNum",
+						"type": "string"
+					}
+				],
+				"name": "getConsentAgreementInfo",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_consentReqID",
+						"type": "string"
+					}
+				],
+				"name": "getConsentRequestInfo",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_agrNum",
+						"type": "string"
+					}
+				],
+				"name": "isConsentAgreementExpired",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_agrNum",
+						"type": "string"
+					}
+				],
+				"name": "isConsentAgreementValid",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_agrNum",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "approverID",
+						"type": "address"
+					}
+				],
+				"name": "isExpiredConsentAgreement",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_agrNum",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_consentReqID",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_dSSignature",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_requesterSignature",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_endDateTime",
+						"type": "uint256"
+					}
+				],
+				"name": "newConsentAgreement",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_consentReqID",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_dataSubjectID",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_requestedBy",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_dataSetID",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_purposeCode",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_uOpCode",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_contractVersion",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_territory",
+						"type": "string"
+					}
+				],
+				"name": "newConsentRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_uOpCode",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_uOpDescription",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_setBy",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isCollect",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isStore",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isProcess",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isDisclose",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isErasure",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isPublish",
+						"type": "bool"
+					}
+				],
+				"name": "setUsageOperations",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_agrNum",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_consentReqID",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_dSSignature",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_requesterSignature",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_endDateTime",
+						"type": "uint256"
+					}
+				],
+				"name": "updateConsentAgreement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"browser/SC-CDMS/ConsentMgr.sol": "ConsentAgreementMgr"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"browser/SC-CDMS/ConsentMgr.sol": {
+			"keccak256": "0x4366ea9c8a63b1b3889d7e306b20cd8c359c311cb0abb66b176501a4f62b4a51",
+			"urls": [
+				"bzz-raw://3ac16c0b5a65bb9a0e0bad71ac0cfd88b05f48659ab72ff30b2bdfef615dd6d9",
+				"dweb:/ipfs/QmQfHtPBhHQy2JwiDXGFTvXPUHWJfC4TcyLZfTSKVojh25"
+			]
+		}
+	},
+	"version": 1
+}
