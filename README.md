@@ -3,7 +3,7 @@
 This repository contains three core smart contracts for the SC-DCMS (Smart contract-based Dynamic Consent Management System).
 
 ### Prequisites
-- git
+- [git](https://git-scm.com/downloads)
 - curl
 - nodejs and npm
 - Docker and Docker-compose
