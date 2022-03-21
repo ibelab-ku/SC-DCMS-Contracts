@@ -4,9 +4,9 @@ This repository contains three core smart contracts for the SC-DCMS (Smart contr
 
 ### Prequisites
 - [git](https://git-scm.com/downloads)
-- curl
-- nodejs and npm
-- Docker and Docker-compose
+- [curl](https://curl.se/download.html)
+- [nodejs](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/package/npm)
+- [Docker](https://www.docker.com/products/docker-desktop/) and [Docker-compose](https://docs.docker.com/compose/install/)
 - Operational Quorum Blockchain network
 
 ### Quorum blockchain network deployment
