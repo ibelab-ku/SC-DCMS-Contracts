@@ -54,7 +54,7 @@ contract PersonalDataMgr{
         bool _isPersonal,
         bool _isSensitive) 
         public {
-            require(msg.sender == _dataProvider, "Only Data Provider this action!");
+            require(msg.sender == _dataProvider, "Only Data Provider can perform this action!");
             DataSets[_dataSetID].dataSetName = _dataSetName;
             DataSets[_dataSetID].category = _category;
             DataSets[_dataSetID].description = _description;
@@ -122,7 +122,7 @@ contract PersonalDataMgr{
         bool _isPersonal,
         bool _isSensitive) 
         public {
-            require(msg.sender == _dataProvider, "Only Data Provider this action!");
+            require(msg.sender == _dataProvider, "Only Data Provider can perform this action!");
             DataSets[_dataSetID].dataSetName = _dataSetName;
             DataSets[_dataSetID].category = _category;
             DataSets[_dataSetID].description = _description;
