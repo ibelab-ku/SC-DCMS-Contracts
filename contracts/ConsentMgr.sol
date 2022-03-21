@@ -287,7 +287,7 @@ contract ConsentAgreementMgr{
             //uint _startDateTime,
             uint256 _endDateTime )
             public
-            //returns(bool success)
+            returns(bool success)
             {
                 ConsentAgreements[_agrNum].consentReqID = _consentReqID;
                 ConsentAgreements[_agrNum].dSSignature = _dSSignature;
@@ -309,8 +309,7 @@ contract ConsentAgreementMgr{
 
                 emit consentAgreementUpdated(_agrNum, ConsentAgreements[_agrNum].lastUpdate,
                                              ConsentAgreements[_agrNum].updatedBy);
-
-               // return (success = true);
+               return (success = true);
     }
 
 }
