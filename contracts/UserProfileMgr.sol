@@ -6,8 +6,8 @@ import "./ConsentMgr.sol";
 /*
 *@Title :  User Profile Managment Contract 
 *   	   Developed by Merlec Mpyana M. 
-* 	       Email: mlecjm(a)korea.ac.kr 
-*	       Intelligent Blockchain Engineering Lab, Korea University
+* 	    Email: mlecjm(a)korea.ac.kr 
+*	    Intelligent Blockchain Engineering Lab, Korea University
 */
 
 contract UserProfileMgr{
