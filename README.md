@@ -1,4 +1,4 @@
-## SC-DCMS
+## SC-DCMS Core Smart contracts
 
 This repository contains three core smart contracts for the SC-DCMS (Smart contract-based Dynamic Consent Management System).
 
